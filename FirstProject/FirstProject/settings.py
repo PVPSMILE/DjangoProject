@@ -26,9 +26,9 @@ PATH = "\\".join(PATH)
 SECRET_KEY = 'django-insecure-n#5fq&4cpbasp6+&z$5auxbtx64*h4ve1iu(e41!v#zj7qoh=8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['loclahost', '15.237.95.25']
 
 
 # Application definition
