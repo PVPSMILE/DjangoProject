@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-n#5fq&4cpbasp6+&z$5auxbtx64*h4ve1iu(e41!v#zj7qoh=8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['loclahost', '15.237.95.25']
+ALLOWED_HOSTS = ['loclahost', '15.237.95.25', 'culturecloud.pp.ua']
 
 
 # Application definition
@@ -122,8 +122,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATICFILES_DIRS = [STATIC_DIR]
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#STATIC_DIR = os.path.join(BASE_DIR, 'static')
+#STATICFILES_DIRS = [STATIC_DIR]
 
 MEDIA_URL = '/media/' 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
