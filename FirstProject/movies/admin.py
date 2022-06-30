@@ -1,8 +1,16 @@
 from unicodedata import category
+from django import forms
 from django.contrib import admin
 # from django.contrib import mark_safe
 from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Rewiews 
 # Register your models here.
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+class MovieAdminForm(forms.ModelForm):
+    description = forms.CharField(label="description", widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Movie
+        fields = '__all__'
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -28,6 +36,7 @@ class MovieAdmin(admin.ModelAdmin):
     inlines = [ShowRewiws, ]#ShowMovieShots
     save_on_top= True
     list_editable = ("draft",)
+    form = MovieAdminForm
     # fields = (("actors", "deirectors", "genres"),)
     fieldsets = (
         (None, {#1None can be a name of group 
@@ -79,5 +88,5 @@ class RatingAdmin(admin.ModelAdmin):
 admin.site.register(RatingStar)
 admin.site.register(MovieShots)
 
-admin.site.site_title = "???"
-admin.site.site_header = "???"
+admin.site.site_title = "Culture Cloud"
+admin.site.site_header = "Culture Cloud"
