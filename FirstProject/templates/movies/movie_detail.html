@@ -43,17 +43,18 @@
             <li class="none">
                 <span><b>Director:</b>
                     {% for director in movie.directors.all %}
-                        {{ director.name }}
+                        <a href="{% url 'actor' director.name%}">{{ director.name }}</a>                      
                     {% endfor %}
                 </span>
             </li>
             <li class="none"><span><b>Actors:</b>
                 {% for actor in movie.actors.all %}
-                    {{ actor.name }}
+                    <a href="{% url 'actor' actor.name%}">{{ actor.name }},</a>                      
                 {% endfor %}
+                </span>
             </span>
             </li>
-            <li class="none"><span><b>Genrs:</b>
+            <li class="none"><span><b>Genres:</b>
                 {% for genre in movie.genres.all %}
                     {{ genre.name }}
                 {% endfor %}
@@ -73,45 +74,33 @@
             </li>
             <li class="none">
                 <a href="#"><b>Rating:</b>
-                    <span class="fa fa-star" aria-hidden="true"
-                            style="outline: none; cursor: inherit;"></span>
-                    <span class="fa fa-star" aria-hidden="true"
-                            style="outline: none; cursor: inherit;"></span>
-                    <span class="fa fa-star" aria-hidden="true"
-                            style="outline: none; cursor: inherit;"></span>
-                    <span class="fa fa-star" aria-hidden="true"
-                            style="outline: none; cursor: inherit;"></span>
-                    <span class="fa fa-star" aria-hidden="true"
-                            style="outline: none; cursor: inherit;"></span>
-                    <span class="editContent"
-                            style="outline: none; cursor: inherit;">5.0</span>
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <span class="fa fa-star" aria-hidden="true"></span>
+                    <span class="editContent">5.0</span>
                 </a>
             </li>
             <div class="share-desc">
                 <div class="share">
-                    <h4 class="editContent"
-                        style="outline: none; cursor: inherit;">
-                        Share:</h4>
+                    <h4 class="editContent">
+                        Share:
+                    </h4>
                     <ul class="w3layouts_social_list list-unstyled">
                         <li>
-                            <a href="#" class="w3pvt_facebook editContent"
-                                style="outline: none; cursor: inherit;">
-                            <span class="fa fa-facebook-f"
-                                    style="outline: none; cursor: inherit;"></span>
+                            <a href="#" class="w3pvt_facebook editContent">
+                                <span class="fa fa-facebook-f"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="w3pvt_twitter editContent"
-                                style="outline: none; cursor: inherit;">
-                            <span class="fa fa-twitter"
-                                    style="outline: none; cursor: inherit;"></span>
+                            <a href="#" class="w3pvt_twitter editContent">
+                                <span class="fa fa-twitter"></span>
                             </a>
                         </li>
                         <li>
-                            <a href="#" class="w3pvt_dribble editContent"
-                                style="outline: none; cursor: inherit;">
-                            <span class="fa fa-dribbble"
-                                    style="outline: none; cursor: inherit;"></span>
+                            <a href="#" class="w3pvt_dribble editContent">
+                                <span class="fa fa-dribbble"></span>
                             </a>
                         </li>
                     </ul>
@@ -122,19 +111,18 @@
 </div>
 <div class="row sub-para-w3layouts mt-5">
 
-    <h3 class="shop-sing editContent" style="outline: none; cursor: inherit;">
+    <h3 class="shop-sing editContent">
         About film {{ movie.title }}
     </h3>
-    <p>
+    <!-- <p>
         <img src="bundles/images/about.jpg" class="img-fluid" alt="">
         <img src="bundles/images/admin.jpg" class="img-fluid" alt="">
         <img src="bundles/images/d1.jpg" class="img-fluid" alt="">
+    </p> -->
+    <p class="editContent">
+        {{ movie.description|safe }}
     </p>
-    <p class="editContent" style="outline: none; cursor: inherit;">
-        {{ movie.description }}
-    </p>
-    <p class="mt-3 italic-blue editContent"
-        style="outline: none; cursor: inherit;">
+    <p class="mt-3 italic-blue editContent">
         <!-- <iframe width="560" height="315"
                 src="https://www.youtube.com/embed/A36LahZNUiE?controls=0"
                 frameborder="0" allow="accelerometer; autoplay;
@@ -151,14 +139,13 @@
         <div class="contact-single">
             <h3 class="editContent">
                 <span class="sub-tittle editContent">{{movie.rewiews_set.count}}</span>
-                Оставить отзыв
+                Leave review
             </h3>
 
             <form action="{% url 'add_review' movie.id%}" method="post" class="mt-4" id="formReview">
                 {% csrf_token %}
                 <input type="hidden" name="parent" id="contactparent" value="">
-                <div class="form-group editContent"
-                        style="outline: none; cursor: inherit;">
+                <div class="form-group editContent">
                     <label for="contactcomment" class="editContent">
                         Ваш комментарий
                         </label>
@@ -166,16 +153,14 @@
                                 id="contactcomment" required=""></textarea>
                 </div>
                 <div class="d-sm-flex">
-                    <div class="col-sm-6 form-group p-0 editContent"
-                            style="outline: none; cursor: inherit;">
+                    <div class="col-sm-6 form-group p-0 editContent">
                         <label for="contactusername" class="editContent">
-                            Имя
+                            Name
                         </label>
                         <input type="text" class="form-control border" name="name"
                                 id="contactusername" required="">
                     </div>
-                    <div class="col-sm-6 form-group ml-sm-3 editContent"
-                            style="outline: none; cursor: inherit;">
+                    <div class="col-sm-6 form-group ml-sm-3 editContent">
                         <label for="contactemail" class="editContent" >
                             Email
                         </label>
@@ -185,7 +170,7 @@
                 </div>
                 <button type="submit"
                         class="mt-3 btn btn-success btn-block py-3">
-                        Отправить
+                        Send
                 </button>
             </form>
         </div>

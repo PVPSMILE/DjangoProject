@@ -33,9 +33,14 @@ class Actor(models.Model):
     def __str__(self):
         return self.name
 
+    def get_absolute_url(self):
+        return reverse('actor', kwargs={"slug": self.name})
+        
     class Meta:
         verbose_name = "Actor and director"
         verbose_name_plural = "Actors and directors"
+
+    
 
 class Genre(models.Model):
 

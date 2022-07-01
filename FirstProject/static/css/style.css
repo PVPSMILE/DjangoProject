@@ -386,7 +386,7 @@ li > a:only-child:after {
 /*--/banner --*/
 
 .main-banner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/page_banners/main.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -397,7 +397,7 @@ li > a:only-child:after {
 }
 
 .main-banner.inner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/page_banners/main.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -407,7 +407,7 @@ li > a:only-child:after {
     min-height: 20em;
 }
 .movie-banner {
-    background: url(../images/movie.jpg)no-repeat center;
+    background: url(../images/page_banners/movie.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -417,7 +417,7 @@ li > a:only-child:after {
     min-height: 40em;
 }
 .book-banner {
-    background: url(../images/book.jpeg)no-repeat center;
+    background: url(../images/page_banners/book.jpeg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -867,7 +867,7 @@ ul.w3layouts-box-list li {
     font-size: 0.9em;
 }
 
-.grid-img-right {
+/* .grid-img-right {
     background: url(../images/single.jpg)no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -877,7 +877,7 @@ ul.w3layouts-box-list li {
     position: relative;
     height: 15em;
     padding: 5.5em 2em 0 0;
-}
+} */
 
 .grid-img-right span.money {
     color: #fff;
@@ -1615,8 +1615,8 @@ a.move-top span {
     font-size: 40px;
     background-color: rgba(0, 0, 0, 0);
     /* font-family: &quot;Source Sans Pro&quot;, sans-serif;" */
-.bg1 {
+/* .bg1 {
     background-color: rgba(0, 0, 0, 0);
     margin-top: 0px;
     background-image: url(static/css/images/single-post-pic.jpg&quot;);
-}
+} */

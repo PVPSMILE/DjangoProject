@@ -17,6 +17,8 @@ urlpatterns = [
     # path('book/<int:book_id>', post_info, name='book'),
     path('', include("movies.urls")), 
     path('', include("books.urls")),  
+    path('ckeditor/', include('ckeditor_uploader.urls')), 
+
 ]
 
 if settings.DEBUG:

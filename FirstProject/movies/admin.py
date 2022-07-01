@@ -1,8 +1,16 @@
 from unicodedata import category
+from django import forms
 from django.contrib import admin
 # from django.contrib import mark_safe
 from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Rewiews 
 # Register your models here.
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+
+class MovieAdminForm(forms.ModelForm):
+    description = forms.CharField(label="description", widget=CKEditorUploadingWidget())
+    class Meta:
+        model = Movie
+        fields = '__all__'
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
@@ -28,6 +36,8 @@ class MovieAdmin(admin.ModelAdmin):
     inlines = [ShowRewiws, ]#ShowMovieShots
     save_on_top= True
     list_editable = ("draft",)
+    actions = ["publish", "unpublish"]
+    form = MovieAdminForm
     # fields = (("actors", "deirectors", "genres"),)
     fieldsets = (
         (None, {#1None can be a name of group 
@@ -51,6 +61,29 @@ class MovieAdmin(admin.ModelAdmin):
             "fields": ("url", "draft",)
         }),
     )
+    def unpublish(self, request, quaryset):
+
+        row_update = quaryset.update(draft=True)
+        if row_update == '1':
+            message_bit = "1 update"
+        else:
+            message_bit = f"{row_update} updates"
+        self.message_user(request, f"{message_bit}")
+
+    def publish(self, request, quaryset):
+
+        row_update = quaryset.update(draft=False)
+        if row_update == '1':
+            message_bit = "1 update"
+        else:
+            message_bit = f"{row_update} updates"
+        self.message_user(request, f"{message_bit}")
+
+    publish.short_desription = "Publish"
+    publish.allowed_permission = ('change', )
+
+    unpublish.short_desription = "Unpublish"
+    unpublish.allowed_permission = ('change', )
 
 @admin.register(Rewiews)
 class RewiewsAdmin(admin.ModelAdmin):
@@ -60,10 +93,11 @@ class RewiewsAdmin(admin.ModelAdmin):
 @admin.register(Actor)
 class ActorAdmin(admin.ModelAdmin):
     list_display = ("name", "age", "image")
+    search_fields = ("name", )
     
 
     # def get_image(self, obj):
-    #     return (f'<img scr={obj.image.url} width="50" height="60')
+    #     return (f'<img scr={obj.poster.url} width="50" height="60')
     # get_image.short_description = "Imag32132e"
 
 @admin.register(Genre)
@@ -79,5 +113,5 @@ class RatingAdmin(admin.ModelAdmin):
 admin.site.register(RatingStar)
 admin.site.register(MovieShots)
 
-admin.site.site_title = "???"
-admin.site.site_header = "???"
+admin.site.site_title = "Culture Cloud"
+admin.site.site_header = "Culture Cloud"
