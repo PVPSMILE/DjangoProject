@@ -23,22 +23,6 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
     
 
-class Actor(models.Model):
-    
-    name = models.CharField("Name", max_length=100)
-    age = models.PositiveSmallIntegerField("Age", default=0) #PositiveBigIntegerField допускает положительные значения от 0-32767
-    description = models.TextField("About")
-    image = models.ImageField("Image", upload_to="actors/")
-
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('actor', kwargs={"slug": self.name})
-        
-    class Meta:
-        verbose_name = "Actor and director"
-        verbose_name_plural = "Actors and directors"
 
     
 
@@ -54,7 +38,29 @@ class Genre(models.Model):
     class Meta():
         verbose_name = "Genre"
         verbose_name_plural = "Genres"
+
+class Actor(models.Model):
     
+    name = models.CharField("Name", max_length=100)
+    age = models.PositiveSmallIntegerField("Age", default=0) #PositiveBigIntegerField допускает положительные значения от 0-32767
+    born = models.DateField("Born", default=date.today)
+    start_acting = models.PositiveSmallIntegerField("Start", default=1980)
+    end_acting = models.CharField("End", max_length=100, default="present")
+    genre = models.ManyToManyField(Genre, verbose_name = "genre")
+    nationality = models.CharField("Nationality", max_length=100,  default="USA")
+    description = models.TextField("About")
+    image = models.ImageField("Image", upload_to="actors/")
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('actor', kwargs={"slug": self.name})
+        
+    class Meta:
+        verbose_name = "Actor and director"
+        verbose_name_plural = "Actors and directors"
+  
 class Movie(models.Model):
 
     title = models.CharField("Title", max_length=100)

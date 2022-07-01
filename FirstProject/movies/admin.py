@@ -92,7 +92,9 @@ class RewiewsAdmin(admin.ModelAdmin):
 
 @admin.register(Actor)
 class ActorAdmin(admin.ModelAdmin):
+
     list_display = ("name", "age", "image")
+    search_fields = ("name")
     search_fields = ("name", )
     
 

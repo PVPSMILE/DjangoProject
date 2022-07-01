@@ -22,9 +22,16 @@
                 <!-- <h5 class="editContent"></h5> -->
                 <ul>
                     
-                    <li class="none">
-                        <span><b>Age:</b>
-                            {{ actor.age }}
+                    <li class="none">   
+                        <span><b>Born:</b>
+                            {{ actor.born }}
+                            ({{ actor.age }}years)
+                        </span>
+                    </li>
+                    <li class="none">   
+                        <span><b>Years active:</b>
+                            {{ actor.start_acting}}—
+                            {{ actor.end_acting }}
                         </span>
                     </li>
                     <!-- <li class="none"><span><b>Country:</b>
@@ -32,9 +39,11 @@
                         </span>
                     </li> -->
                     <li class="none"><span><b>Director:</b>
-                            {% for movie in actor.film_director.all %}                               
-                                <a href="{% url 'movie_detail' movie.url%}">{{ movie.title }}</a>                      
-                            </span>
+                       
+                            {% for movie in actor.film_director.all %}
+                                
+                                    <a href="{% url 'movie_detail' movie.url%}">{{ movie.title }}</a>                      
+                                </span>
                             {% endfor %}
                         </span>
                     </li>
@@ -42,6 +51,18 @@
                             {% for movie in actor.film_actor.all %}          
                                 <a href="{% url 'movie_detail' movie.url%}">{{ movie.title }}</a>                              
                             {% endfor %}
+                        </span>
+                    </li>
+
+                    <li class="none">   
+                        <span><b>Nationality:</b>
+                            {{ actor.nationality }}
+
+                        </span>
+                    </li>
+                    <li class="none">   
+                        <span><b>Genres:</b>
+                            {{ actor.genre }}
                         </span>
                     </li>
                 </ul>           

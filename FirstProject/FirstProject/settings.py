@@ -11,9 +11,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-n#5fq&4cpbasp6+&z$5auxbtx64*h4ve1iu(e41!v#zj7qoh=8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['culturecloud.pp.ua', '15.237.95.25']
+ALLOWED_HOSTS = []
 # 'culturecloud.pp.ua', '15.237.95.25'
 
 # Application definition
