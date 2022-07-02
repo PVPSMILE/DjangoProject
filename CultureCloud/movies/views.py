@@ -52,7 +52,7 @@ class AddReview(View):
             form.movie = movie
             form.save()
 
-        return redirect("/")
+        return redirect("/films")
 
 class ActorView(DetailView, GenreYear):
     model = Actor

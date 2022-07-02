@@ -138,9 +138,13 @@
     
 </div>
 <form action="{% url 'filter'%}" method="get">
-    <button type="submit">Find</button>
+   
+        
+        
+
     <div class="left-side my-3">
-        <h3 class="sear-head editContent" >Genres</h3>
+        <h3 class="sear-head editContent" >Genres <button type="submit" class="btn1 btn" >Filter</button></h3>
+        
         <ul class="w3layouts-box-list">
             {% for genre in view.get_genres %}
                 <li class="editContent">
@@ -150,7 +154,7 @@
             {% endfor %}
         </ul>
     </div>
-    <div class="left-side">
+    <!-- <div class="left-side">
         <h3 class="sear-head editContent" >Year</h3>
         <ul class="w3layouts-box-list">
             {% for movie in view.get_years%}
@@ -160,6 +164,7 @@
                 </li>
             {%endfor%}
         </ul>
-    </div>
+    </div> -->
+    
 </form>
 {% get_last_updates %}

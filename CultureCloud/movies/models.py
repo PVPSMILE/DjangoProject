@@ -23,6 +23,19 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
     
 
+class ActorGenre(models.Model):
+
+    name = models.CharField("Name",max_length=100)
+    description = models.TextField("About")
+    url = models.SlugField(max_length=100, unique=True)
+
+    def __str__(self):
+        return self.name
+    
+    class Meta():
+        verbose_name = "ActorGenre"
+        verbose_name_plural = "ActorGenres"
+
 
     
 

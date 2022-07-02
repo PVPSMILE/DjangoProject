@@ -23,4 +23,11 @@ class BookDetailView(View):
         books = Book.objects.get(url=slug)
         return render(request, "books/book_detail.html", {"book": books})
 
-  
+def index(request):
+    # def get_context_data(self, *args, **kwargs):
+    #     context = super().get_context_data(*args, **kwargs)
+    #     context["categories"] = Category.objects.all()
+    #     return context
+    book = Book.objects.all()
+    return render(request, 'FirstApp/index.html', {'book': book})
+      
