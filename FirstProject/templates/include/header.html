@@ -1,5 +1,8 @@
 <!-- Header -->
 {% load movie_tags %}
+
+
+
 <header class="header">
     <div class="container-fluid px-lg-5">
         <!-- nav -->
@@ -23,11 +26,21 @@
                         {% for category in categories%}
                             <li><a href="/films">{{category.name}}</a></li>
                         {%endfor%}
+                        <!-- {% for category in categories%}
+                            <li><a href="/">{{category.name}}</a></li>
+                        {%endfor%} -->
                     </ul>
                 </li>
-                <li><a href="{% url 'main'%}">Log in</a></li>
+                <li><a href="{% url 'main'%}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Log in</a></li>
             </ul>
         </nav>
-        
+        <!-- //nav -->
     </div>
 </header>
+<!-- //header -->
+<!--/banner-->
+
+    <!--// banner-inner -->
+
+<!--//main-content-->
+<!---->
