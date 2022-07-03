@@ -1,5 +1,5 @@
 {% extends 'books/base.html' %}
-
+— Culture Cloud
 {% block header %} book-banner {% endblock header %}
 
 {% block book %}
@@ -7,18 +7,17 @@
     <div class="left-ads-display col-lg-9">
         <div class="row">
 
-            {% for book in book_list %}
+            <!-- {% for book in book_list %} -->
 
-                <div class="col-md-4 product-men">
-                    <div class="product-shoe-info editContent text-center mt-lg-4" >
+                <div class="col-md-3 product-men">
+                    <div class="product-shoe-info editContent text-center mt-lg-4 product-shoe-info_update"  >
                         <div class="men-thumb-item">
-                            <img src="{{book.IMAGE }}" class="img-fluid" alt="" >
+                            <img src="{{book.poster.url }}" class="img-fluid" alt="" >
                         </div>
                         <div class="item-info-product">
                             <h4 class="">
-                                <a href="#" class="editContent" >
-                                    {{book.NAME}}
-                                </a>
+                                <a href="{% url 'book_detail' book.url%}" class="editContent" >
+                                    {{book.name}}</a>
                             </h4>
                         
                            
@@ -33,7 +32,7 @@
                         </div>
                     </div>
                 </div>
-            {% endfor %}
+            <!-- {% endfor %} -->
         </div>
             
        

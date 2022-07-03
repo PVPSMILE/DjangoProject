@@ -25,11 +25,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'FirstApp.apps.FirstappConfig',
+    
     'movies.apps.MoviesConfig',
     'books.apps.BooksConfig',
     'ckeditor',
     'ckeditor_uploader',
+    'public'
 ]
 
 MIDDLEWARE = [
@@ -189,4 +190,8 @@ CKEDITOR_CONFIGS = {
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# EMAIL_USE_TLS = True
+# EMAIL_HOST = 'frank01zeroy@gmail.com'
+# EMAIL_HOST_PASSWORD = 'papadima228'
+# EMAIL_PORT = 587

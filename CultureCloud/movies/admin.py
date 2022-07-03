@@ -2,7 +2,7 @@ from unicodedata import category
 from django import forms
 from django.contrib import admin
 # from django.contrib import mark_safe
-from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Rewiews 
+from .models import Category, Genre, Movie, MovieShots, Actor, Rating, RatingStar, Rewiews
 # Register your models here.
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
@@ -115,6 +115,7 @@ class RatingAdmin(admin.ModelAdmin):
 
 admin.site.register(RatingStar)
 admin.site.register(MovieShots)
+
 
 admin.site.site_title = "Culture Cloud"
 admin.site.site_header = "Culture Cloud"

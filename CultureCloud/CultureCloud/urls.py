@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.conf.urls.static import static
 from django.urls import path, include
-from books.views import index
+from public.views import index
 
 
 
@@ -18,7 +18,7 @@ urlpatterns = [
     path('', include("movies.urls")), 
     path('', include("books.urls")),  
     path('ckeditor/', include('ckeditor_uploader.urls')), 
-
+    path('', include("public.urls")), 
 ]
 
 if settings.DEBUG:

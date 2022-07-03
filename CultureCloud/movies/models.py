@@ -23,19 +23,6 @@ class Category(models.Model):
         verbose_name_plural = "Categories"
     
 
-class ActorGenre(models.Model):
-
-    name = models.CharField("Name",max_length=100)
-    description = models.TextField("About")
-    url = models.SlugField(max_length=100, unique=True)
-
-    def __str__(self):
-        return self.name
-    
-    class Meta():
-        verbose_name = "ActorGenre"
-        verbose_name_plural = "ActorGenres"
-
 
     
 
@@ -59,7 +46,7 @@ class Actor(models.Model):
     born = models.DateField("Born", default=date.today)
     start_acting = models.PositiveSmallIntegerField("Start", default=1980)
     end_acting = models.CharField("End", max_length=100, default="present")
-    genre = models.ManyToManyField(Genre, verbose_name = "genre")
+    genre = models.CharField("Name", max_length=100, default="Adventure, Drama")
     nationality = models.CharField("Nationality", max_length=100,  default="USA")
     description = models.TextField("About")
     image = models.ImageField("Image", upload_to="actors/")

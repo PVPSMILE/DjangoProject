@@ -168,6 +168,9 @@
     .main-banner {
         min-height: 38em;
     }
+    .film-banner{
+        min-height: 20em;
+    }
     
     .banner-info {
         padding: 16em 0 0em 3em;
@@ -183,12 +186,21 @@
     h3.tittle {
         font-size: 2.3em;
     }
-
+    .img-fluid {
+        max-width: 116%;
+        
+    }
     .main-banner {
         min-height: 38em;
     }
+    .film-banner{
+        min-height: 20em;
+    }
 
     .main-banner.inner {
+        min-height: 15em;
+    }
+    .film-banner.inner{
         min-height: 15em;
     }
 }
@@ -198,11 +210,16 @@
         font-size: 3em !important;
         letter-spacing: 2px;
     }
-
+    .img-fluid {
+        max-width: 100%;
+        
+    }
     .main-banner {
         min-height: 38em;
     }
-
+    .film-banner{
+        min-height: 20em;
+    }
     h3.tittle {
         font-size: 2em !important;
     }
@@ -283,9 +300,13 @@
         font-size: 2.5em !important;
         letter-spacing: 2px;
     }
-
+    
     .main-banner {
         min-height: 38em;
+    }
+
+    .film-banner{
+        min-height: 20em;
     }
 
     .feature-grids h3,
@@ -298,15 +319,26 @@
     .main-banner.inner {
         min-height: 12em;
     }
-
+   
+    .realize {
+        max-width: 45%;
+    }
+    .h_realize {
+        margin-left: -74px;
+    }
     .banner-info {
         padding: 11em 0 0em 1em;
         width: 44%;
     }
 
+
     .main-banner {
         min-height: 30em;
     }
+    .film-banner{
+        min-height: 20em;
+    }
+    
 
     h3.tittle {
         font-size: 1.8em !important;
@@ -330,7 +362,7 @@
     .icon-gd-info {
         text-align: center;
     }
-
+    
     .product-men {
         margin-bottom: 1em;
         float: left;
@@ -383,7 +415,12 @@
     .main-banner {
         min-height: 28em;
     }
-
+    .film-banner{
+        min-height: 28em;
+    }
+    .film-banner{
+        min-height: 18em;
+    }
     .banner-info {
         padding: 10em 0 0em 1em;
         width: 58%;
@@ -421,7 +458,15 @@
     .main-banner {
         min-height: 25em;
     }
-
+    .film-banner{
+        min-height: 25em;
+    }
+    .h_realize {
+        margin-left: -74px;
+    }
+    .film-banner{
+        min-height: 20em;
+    }
     .banner-info {
         padding: 9em 0 0em 1em;
         width: 58%;
@@ -440,6 +485,10 @@
     .main-banner.inner {
         min-height: 9em;
     }
+
+    .film-banner.inner{
+        min-height: 9em;
+    }
 }
 
 @media(max-width:440px) {
@@ -449,6 +498,10 @@
     }
 
     .main-banner {
+        min-height: 23em;
+    }
+
+    .film-banner{
         min-height: 23em;
     }
 
@@ -474,6 +527,12 @@
     .banner-info {
         padding: 8em 0 0em 1em;
         width: 75%;
+    }
+    .film-banner{
+        min-height: 10em;
+    }
+    .h_realize {
+        margin-left: -60px;
     }
 }
 

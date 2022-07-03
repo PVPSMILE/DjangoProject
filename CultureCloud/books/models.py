@@ -23,9 +23,10 @@ class Genre(models.Model):
   
 class Book(models.Model):
 
-    name = models.CharField("Title", max_length=100)
-    description = models.TextField("About")
-    short_description = models.TextField("About")
+    name = models.CharField("Name", max_length=100)
+    author = models.CharField("Author", max_length=100, default="Alice")
+    short_description = models.TextField("Short Description")
+    description = models.TextField("Full Description")
     poster = models.ImageField("Poster", upload_to="books/")
     year = models.PositiveSmallIntegerField("Realize", default=2019)
     genres = models.ManyToManyField(Genre, verbose_name = "genre")
@@ -40,7 +41,7 @@ class Book(models.Model):
         return self.reviews_set.filter(parent__isnull=True)
         
     def __str__(self):
-        return self.title
+        return self.name
     
     def get_absolute_url(self):
         return reverse("book_detail", kwargs={"slug": self.url})
