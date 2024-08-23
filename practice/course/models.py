@@ -16,7 +16,10 @@ class Lesson(models.Model):
 
     def __str__(self):
         return f"{self.lesson_number} - {self.title}"
+dwqdwq
 
+dwqdwqd
+q
 class Sentence(models.Model):
     
     lesson = models.ForeignKey(Lesson, on_delete=models.CASCADE, related_name='sentences')
